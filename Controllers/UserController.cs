@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using PrimeraApi.Model;
+using PrimeraApi.Repository;
 
 namespace PrimeraApi.Controllers
 {
@@ -10,7 +11,8 @@ namespace PrimeraApi.Controllers
         [HttpGet(Name = "GetUsers")]
         public List<User> GetUsers()
         {
-            return new List<User>() { new User { Id = 1, Name = "Agus" } };
+
+            return UserHandler.GetUsers();
         }
     }
 }
